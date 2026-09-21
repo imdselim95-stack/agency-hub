@@ -3,8 +3,8 @@ import Head from 'next/head';
 import { 
   Briefcase, Search, ExternalLink, Copy, Check, RefreshCw, 
   Sparkles, Radio, DollarSign, Send, Trophy, Flame, 
-  ThumbsUp, ThumbsDown, AlertTriangle, ShieldCheck, Tag,
-  ChevronDown, ChevronUp, Layers, CheckCircle2, Inbox
+  ThumbsUp, ThumbsDown, ShieldCheck, 
+  ChevronDown, ChevronUp, Inbox
 } from 'lucide-react';
 
 interface LeadV3 {
@@ -209,7 +209,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Source Filter Strip */}
+        {/* Search & Source Filter */}
         <section className="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             <div className="relative w-full sm:w-80">
@@ -258,7 +258,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Opportunity Stream */}
+        {/* Opportunity Feed */}
         <section className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
           <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/70 flex items-center justify-between">
             <h2 className="text-xs font-black text-slate-700 uppercase tracking-wider flex items-center gap-2">
@@ -361,7 +361,7 @@ export default function Dashboard() {
                       </div>
                     )}
 
-                    {/* SECTION 20: WHY THIS LEAD PANEL */}
+                    {/* "Why LeadScout Recommended This" Panel */}
                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3 text-xs">
                       <div className="flex items-center justify-between font-black text-slate-700 uppercase tracking-wider text-[11px]">
                         <span className="flex items-center gap-1.5 text-cyan-900">
