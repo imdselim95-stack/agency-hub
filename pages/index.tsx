@@ -126,7 +126,7 @@ export default function Dashboard() {
         <title>LeadScout V3 | Opportunity Intelligence Hub</title>
       </Head>
 
-      {/* Top Navigation */}
+      {/* Header */}
       <header className="border-b border-slate-200 bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -162,7 +162,7 @@ export default function Dashboard() {
       {/* Main Container */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-7">
         
-        {/* KPI Metric Strip */}
+        {/* KPI Strip */}
         <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs hover:shadow-md transition">
             <div className="flex items-center justify-between text-slate-500">
@@ -209,7 +209,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Source Distribution & Search Filter Strip */}
+        {/* Source Filter Strip */}
         <section className="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             <div className="relative w-full sm:w-80">
@@ -223,7 +223,6 @@ export default function Dashboard() {
               />
             </div>
 
-            {/* Source Switcher */}
             <div className="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 text-xs font-bold">
               <span className="text-slate-400 mr-1 text-[11px] uppercase tracking-wider">Source:</span>
               {['All', 'Reddit', 'IndieHackers'].map((src) => (
@@ -241,7 +240,6 @@ export default function Dashboard() {
               ))}
             </div>
 
-            {/* CRM Status Tabs */}
             <div className="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
               {['All', 'New', 'Contacted', 'Won', 'Archived'].map((status) => (
                 <button
@@ -293,10 +291,9 @@ export default function Dashboard() {
                 return (
                   <div key={lead.id} className="p-6 hover:bg-slate-50/50 transition flex flex-col gap-4">
                     
-                    {/* Badges Header */}
+                    {/* Header Badges */}
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <div className="flex flex-wrap items-center gap-2">
-                        {/* Overall Score */}
                         <div
                           className={`flex items-center gap-1.5 text-xs font-extrabold px-3 py-1 rounded-lg border ${
                             isHighIntent
@@ -308,17 +305,14 @@ export default function Dashboard() {
                           <span>Score: {lead.overall_score || lead.score}/100</span>
                         </div>
 
-                        {/* Classification */}
                         <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-900 text-white">
                           {lead.classification}
                         </span>
 
-                        {/* Source Tag */}
                         <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
                           {lead.source}
                         </span>
 
-                        {/* Budget Tag */}
                         {lead.budget && lead.budget !== 'Negotiable' && (
                           <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200">
                             <DollarSign className="h-3.5 w-3.5" />
@@ -367,7 +361,7 @@ export default function Dashboard() {
                       </div>
                     )}
 
-                    {/* SECTION 20: "WHY WAS THIS LEAD RECOMMENDED?" PANEL */}
+                    {/* SECTION 20: WHY THIS LEAD PANEL */}
                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3 text-xs">
                       <div className="flex items-center justify-between font-black text-slate-700 uppercase tracking-wider text-[11px]">
                         <span className="flex items-center gap-1.5 text-cyan-900">
@@ -387,10 +381,8 @@ export default function Dashboard() {
                         {lead.qualification_reason || lead.pain_summary}
                       </p>
 
-                      {/* Expandable Evidence & Sub-score Strip (Section 16 & 20) */}
                       {isExpanded && (
                         <div className="pt-3 border-t border-slate-200 space-y-3">
-                          {/* Granular Multi-Factor Sub-scores */}
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] font-bold">
                             <div className="p-2 rounded-lg bg-white border border-slate-200">
                               <span className="text-slate-400 block text-[10px]">Skill Match (30%)</span>
@@ -410,7 +402,6 @@ export default function Dashboard() {
                             </div>
                           </div>
 
-                          {/* Verbatim Source Evidence */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
                             <div className="p-2.5 rounded-lg bg-amber-50/70 border border-amber-200 text-amber-950 font-medium">
                               <strong className="text-amber-800 block text-[10px] uppercase tracking-wider mb-0.5">Verbatim Intent Evidence:</strong>
@@ -437,10 +428,8 @@ export default function Dashboard() {
                       </div>
                     )}
 
-                    {/* SECTION 21: OPERATOR FEEDBACK STRIP & ACTIONS */}
+                    {/* Operator Feedback Strip */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center pt-1 border-t border-slate-100">
-                      
-                      {/* Operator Feedback Buttons */}
                       <div className="flex flex-wrap items-center gap-1.5 text-xs font-bold">
                         <span className="text-[11px] text-slate-400 mr-1">Feedback:</span>
                         {[
@@ -464,7 +453,6 @@ export default function Dashboard() {
                         ))}
                       </div>
 
-                      {/* Right Action Buttons */}
                       <div className="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end">
                         <button
                           onClick={() => handleCopy(lead.id, lead.pitch)}
