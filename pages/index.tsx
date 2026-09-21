@@ -3,8 +3,7 @@ import Head from 'next/head';
 import { 
   Briefcase, Search, ExternalLink, Copy, Check, RefreshCw, 
   Sparkles, Radio, DollarSign, Send, Trophy, Flame, 
-  ThumbsUp, ThumbsDown, ShieldCheck, 
-  ChevronDown, ChevronUp, Inbox
+  ShieldCheck, ChevronDown, ChevronUp, Inbox
 } from 'lucide-react';
 
 interface LeadV3 {
@@ -209,7 +208,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Search & Source Filter */}
+        {/* Source Filter Strip */}
         <section className="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             <div className="relative w-full sm:w-80">
@@ -258,7 +257,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Opportunity Feed */}
+        {/* Opportunity Stream */}
         <section className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
           <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/70 flex items-center justify-between">
             <h2 className="text-xs font-black text-slate-700 uppercase tracking-wider flex items-center gap-2">
@@ -349,7 +348,7 @@ export default function Dashboard() {
                       </div>
                     </div>
 
-                    {/* Matched Skills Chips */}
+                    {/* Matched Skills */}
                     {lead.matched_skills && lead.matched_skills.length > 0 && (
                       <div className="flex flex-wrap items-center gap-1.5">
                         <span className="text-[11px] uppercase tracking-wider font-extrabold text-slate-400 mr-1">Skills:</span>
@@ -361,7 +360,7 @@ export default function Dashboard() {
                       </div>
                     )}
 
-                    {/* "Why LeadScout Recommended This" Panel */}
+                    {/* WHY THIS LEAD PANEL (Section 20) */}
                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3 text-xs">
                       <div className="flex items-center justify-between font-black text-slate-700 uppercase tracking-wider text-[11px]">
                         <span className="flex items-center gap-1.5 text-cyan-900">
@@ -416,7 +415,7 @@ export default function Dashboard() {
                       )}
                     </div>
 
-                    {/* Proposal Pitch Draft */}
+                    {/* Proposal Pitch */}
                     {lead.pitch && (
                       <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-2">
                         <div className="text-[11px] uppercase tracking-wider font-extrabold text-slate-500">
@@ -428,7 +427,7 @@ export default function Dashboard() {
                       </div>
                     )}
 
-                    {/* Operator Feedback Strip */}
+                    {/* Operator Feedback Buttons (Section 21) */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center pt-1 border-t border-slate-100">
                       <div className="flex flex-wrap items-center gap-1.5 text-xs font-bold">
                         <span className="text-[11px] text-slate-400 mr-1">Feedback:</span>
